@@ -19,6 +19,16 @@ var digitalData = {
 <!--Adobe Launch dev environment-->
 <script src="https://assets.adobedtm.com/666644a00be2/b1083f5d3e1e/launch-ef36e0fd984f-development.min.js" async></script>
 <!--/Adobe Launch-->
+<!-- Modal script-->
+<script>
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+</script>
+<!-- /Modal script-->
 </head>
 <body>
 <h1>Josh's Wares</h1>
@@ -28,8 +38,20 @@ var digitalData = {
     <h1>Duck Phone</h1>
     <p class="price">Out of stock.</p>
     <p>A Mallard Duck Landline Phone. </p>
-    <p><button>Notify when back in stock.</button></p>
+    <p><button class="open-button" onclick="openForm()">Notify when back in stock.</button></p>
 </div>
-<p><a href="index.html">Back to Home</a></p>
+<!-- The modal form -->
+<div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>Restock</h1>
+      <p>Thank you for your interest. Please enter your email to be notified when the Duck Phone is back in stock.</p>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+      <button type="submit" class="btn">Notify me</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+</div>
+<!-- /The modal form -->
+<p class="return"><a href="index.html">Back to Home</a></p>
 </body>
 </html>
